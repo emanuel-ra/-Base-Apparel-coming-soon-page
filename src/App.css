@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base{
+  :root{
+    
+    /* ### Primary */
+    --desaturated-red: hsl(0, 36%, 70%);
+    --soft-Red: hsl(0, 46%, 43%);
+    /* ### Neutral */
+    --dark-grayish-red: hsl(0, 6%, 24%);    
+    
+    --gradient-from: #f8bfbf;
+    --gradient-to: to #ee8c8c;   
+    --gradient-from-hover: #ffffff;
+    --gradient-to-hover: to #fff5f5;   
+
+  }
+  
+  html{
+    @apply font-josefin-sans bg-gradient-to-l from-[#f8bfbf] to-[#ee8c8c]
+  }
+  main{
+    @apply w-full min-h-screen flex items-center justify-center
+  }  
+}
+@layer components{ 
+  .card{
+    @apply w-full lg:w-10/12 grid grid-cols-1 lg:grid-cols-2 shadow-2xl bg-white
+  }
+  .card-header{
+    @apply flex justify-start items-center p-5 lg:pl-24 
+  }
+  .card-info{
+    @apply row-span-1 text-center py-10 lg:py-0 lg:pl-24 lg:pr-16 lg:text-left
+  }
+  .card-image{
+    @apply row-span-2
+  }
+  .paragraph{
+    @apply text-desaturated-red p-10 lg:p-0
+  }
+  .form-group{
+    @apply lg:w-full flex flex-col mx-5 lg:py-10 lg:pr-10
+  }
+  .form-input{
+    @apply w-full h-12 rounded-full border-2 border-dark-grayish-red p-4
+  }
+  .form-input.error{
+    @apply border-red-600
+  }
+  .btn{
+    @apply w-24 p-4 bg-gradient-to-l from-[#f8bfbf] to-[#ee8c8c] flex justify-center rounded-full absolute right-5 shadow-lg hover:to-[#fff5f5]
+  }
+}
